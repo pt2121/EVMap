@@ -80,7 +80,7 @@
                             android:background="@null"
                             android:gravity="center_vertical"
                             android:hint="@string/search"
-                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                             android:textColor="?android:textColorSecondary"
                             android:dropDownVerticalOffset="8dp"
                             android:popupBackground="@drawable/rounded_rect_4dp" />
@@ -197,7 +197,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_behavior="@string/MergedAppBarLayoutBehavior"
-            android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+            android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_layers"

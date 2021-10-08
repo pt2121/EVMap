@@ -70,7 +70,7 @@
             android:breakStrategy="balanced"
             android:gravity="center_horizontal"
             android:text="@string/favorites_empty_state"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
             android:textColor="?android:textColorSecondary"
             app:goneUnless="@{vm.listData.size() == 0}"
             app:layout_constraintBottom_toBottomOf="parent"
