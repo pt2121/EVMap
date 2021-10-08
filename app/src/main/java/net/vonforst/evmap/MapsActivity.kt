@@ -102,11 +102,11 @@ class MapsActivity : AppCompatActivity() {
                     }
                 })
             }
-            navGraph.startDestination = R.id.onboarding
+            navGraph.setStartDestination(R.id.onboarding)
             navController.graph = navGraph
             return
         } else {
-            navGraph.startDestination = R.id.map
+            navGraph.setStartDestination(R.id.map)
             navController.graph = navGraph
         }
 
