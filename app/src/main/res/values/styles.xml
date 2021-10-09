@@ -41,4 +41,8 @@
         <item name="android:windowExitAnimation">@anim/chargeprice_dialog_exit</item>
     </style>
 
+    <style name="NoElevationOverlay">
+        <item name="elevationOverlayEnabled">false</item>
+    </style>
+
 </resources>
