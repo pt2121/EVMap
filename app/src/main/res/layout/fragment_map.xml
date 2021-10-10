@@ -87,7 +87,7 @@
                                 android:gravity="center_vertical"
                                 android:hint="@string/search"
                                 android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-                                android:textColorHint="?android:textColorPrimary"
+                                android:textColorHint="@color/hint_text_color"
                                 android:dropDownVerticalOffset="8dp"
                                 android:popupElevation="2dp"
                                 android:popupBackground="@drawable/rounded_rect_24dp" />
