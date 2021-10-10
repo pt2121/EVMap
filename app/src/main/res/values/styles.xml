@@ -45,4 +45,14 @@
         <item name="elevationOverlayEnabled">false</item>
     </style>
 
+    <style name="Widget.App.Button.ElevatedButton.IconOnly" parent="Widget.Material3.Button.ElevatedButton">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:paddingRight">14dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
 </resources>
