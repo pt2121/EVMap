@@ -93,6 +93,7 @@ const val ARG_CHARGER_ID = "chargerId"
 const val ARG_LAT = "lat"
 const val ARG_LON = "lon"
 const val ARG_LOCATION_NAME = "locationName"
+const val ARG_APP_START = "appStart"
 
 class MapFragment : Fragment(), OnMapReadyCallback, MapsActivity.FragmentCallback,
     LostApiClient.ConnectionCallbacks, LocationListener {
@@ -253,6 +254,31 @@ class MapFragment : Fragment(), OnMapReadyCallback, MapsActivity.FragmentCallbac
                 // when there is already another navigation going on
             }
         }*/
+
+        if (savedInstanceState == null && arguments?.getBoolean(ARG_APP_START) == true) {
+            // logo animation after starting the app
+            binding.appLogo.root.visibility = View.VISIBLE
+            binding.appLogo.root.alpha = 0f
+            binding.search.visibility = View.GONE
+
+            binding.appLogo.root.animate().alpha(1f)
+                .withEndAction {
+                    binding.appLogo.root.animate().alpha(0f).apply {
+                        startDelay = 1000
+                    }.withEndAction {
+                        binding.appLogo.root.visibility = View.GONE
+                        binding.search.visibility = View.VISIBLE
+                        binding.search.alpha = 0f
+                        binding.search.animate().alpha(1f).start()
+                    }.start()
+                }.apply {
+                    startDelay = 100
+                }.start()
+            arguments?.putBoolean(ARG_APP_START, false)
+        } else {
+            binding.appLogo.root.visibility = View.GONE
+            binding.search.visibility = View.VISIBLE
+        }
     }
 
     override fun onResume() {
