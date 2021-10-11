@@ -43,7 +43,6 @@ import coil.memory.MemoryCache
 import coil.size.OriginalSize
 import coil.size.SizeResolver
 import com.car2go.maps.AnyMap
-import com.car2go.maps.MapFragment
 import com.car2go.maps.OnMapReadyCallback
 import com.car2go.maps.model.BitmapDescriptor
 import com.car2go.maps.model.LatLng
@@ -198,7 +197,11 @@ class MapFragment : Fragment(), OnMapReadyCallback, MapsActivity.FragmentCallbac
             val density = resources.displayMetrics.density
             // status bar height + toolbar height + margin
             val margin =
-                insets.systemWindowInsetTop + (48 * density).toInt() + (28 * density).toInt()
+                if (binding.toolbarContainer.layoutParams.width == ViewGroup.LayoutParams.MATCH_PARENT) {
+                    insets.systemWindowInsetTop + (48 * density).toInt() + (28 * density).toInt()
+                } else {
+                    insets.systemWindowInsetTop + (12 * density).toInt()
+                }
             binding.fabLayers.updateLayoutParams<ViewGroup.MarginLayoutParams> {
                 topMargin = margin
             }
